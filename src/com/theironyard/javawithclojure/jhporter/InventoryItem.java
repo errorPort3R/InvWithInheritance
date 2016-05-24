@@ -6,9 +6,9 @@ package com.theironyard.javawithclojure.jhporter;
 public class InventoryItem
 {
     //declare variables
-    String name;
-    int quantity;
-    String category;
+    protected String name;
+    protected int quantity;
+    protected String category;
 
     public InventoryItem(String name, int qty, String category)
     {

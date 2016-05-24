@@ -7,9 +7,7 @@ public class Shirt extends InventoryItem
 {
     public Shirt(String name, int qty)
     {
-        this.name = name;
-        this.quantity = qty;
-        this.category = "Shirt";
+        super(name, qty, "Shirt");
     }
 }
 

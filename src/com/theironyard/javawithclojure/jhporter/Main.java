@@ -96,7 +96,7 @@ public class Main {
             case "shirt":
                 return new Shirt(name, qty);
             case "shoes":
-                return new Boots(name, qty);
+                return new Shoes(name, qty);
             case "pants":
                 return new Pants(name, qty);
             case "bag":

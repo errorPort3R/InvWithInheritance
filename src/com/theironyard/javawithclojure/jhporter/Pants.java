@@ -7,8 +7,7 @@ public class Pants extends InventoryItem
 {
     public Pants(String name, int qty)
     {
-        this.name=name;
-        this.quantity=qty;
-        this.category="Pants";
-       }
+        super(name, qty, "Pants");
+
+    }
 }

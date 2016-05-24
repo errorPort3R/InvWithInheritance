@@ -57,21 +57,21 @@ public class GameManager
             System.err.printf("\nNot a Valid File!\n");
         }*/
         newPlayer = new Player("James", "1234");
-        newPlayer.addItem("T-shirt", 6, "Shirt");
-        newPlayer.addItem("High-Tops", 12, "Shoes");
-        newPlayer.addItem("Boots", 2, "Shoes");
+        newPlayer.addItem("T-shirt of Perspiration Repulsion", 6, "Shirt");
+        newPlayer.addItem("High-Tops of Height Gains", 12, "Shoes");
+        newPlayer.addItem("Boots of MudHole stomping", 2, "Shoes");
         Players.add(newPlayer);
         newPlayer = new Player("Anna", "1234");
-        newPlayer.addItem("Purse", 1, "Bag");
-        newPlayer.addItem("Blouse", 2, "Shirt");
-        newPlayer.addItem("Jeans", 2, "Pants");
-        newPlayer.addItem("High-Heels", 6, "Shoes");
+        newPlayer.addItem("Purse of Thief-Beating", 1, "Bag");
+        newPlayer.addItem("Blouse of Distraction", 2, "Shirt");
+        newPlayer.addItem("Jeans of Power-Kicking", 2, "Pants");
+        newPlayer.addItem("High-Heels of the Acupuncturist", 6, "Shoes");
         Players.add(newPlayer);
         newPlayer = new Player("Jeff", "1234");
-        newPlayer.addItem("Bag", 6);
-        newPlayer.addItem("Cat", 1);
-        newPlayer.addItem("Laptop", 5);
-        newPlayer.addItem("Notebook", 15);
+        newPlayer.addItem("Satchel of Everything", 6, "Bag");
+        newPlayer.addItem("Gauntlets of the ", 1, "Gloves");
+        newPlayer.addItem("Tattered Shirt of the Miser", 5, "Shirt");
+        newPlayer.addItem("Sandals of Speed", 15, "Shoes");
         Players.add(newPlayer);
         //System.out.printf("\nPlayers loaded.");
     }
@@ -175,7 +175,6 @@ public class GameManager
         InventoryItem remInv;
         String tempInt;
         int choice;
-
 
         System.out.printf("\nWhich of the following would you like to remove?\n");
         this.showInventory(player, input);
