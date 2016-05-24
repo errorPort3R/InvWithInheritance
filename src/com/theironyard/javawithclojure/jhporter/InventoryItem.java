@@ -12,10 +12,11 @@ public class InventoryItem
 
     public InventoryItem(String name, int qty, String category)
     {
-        this.name = name;
-        this.quantity = qty;
-        this.category = String.format("Unknown '%s' category", category);
+       this.name = name;
+       this.quantity = qty;
+       this.category = String.format("Unknown '%s' category", category);
     }
+    public InventoryItem(){}
 
     public String getName()
     {

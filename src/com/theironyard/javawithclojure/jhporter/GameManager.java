@@ -57,19 +57,19 @@ public class GameManager
             System.err.printf("\nNot a Valid File!\n");
         }*/
         newPlayer = new Player("James", "1234");
-        newPlayer.addItem("T-shirt of Perspiration Repulsion", 6, "Shirt");
+        newPlayer.addItem("T-shirt of Anti-Glistening", 6, "Shirt");
         newPlayer.addItem("High-Tops of Height Gains", 12, "Shoes");
-        newPlayer.addItem("Boots of MudHole stomping", 2, "Shoes");
+        newPlayer.addItem("Boots of MudHole Stomping", 2, "Shoes");
         Players.add(newPlayer);
         newPlayer = new Player("Anna", "1234");
         newPlayer.addItem("Purse of Thief-Beating", 1, "Bag");
         newPlayer.addItem("Blouse of Distraction", 2, "Shirt");
         newPlayer.addItem("Jeans of Power-Kicking", 2, "Pants");
-        newPlayer.addItem("High-Heels of the Acupuncturist", 6, "Shoes");
+        newPlayer.addItem("Acupuncturist High-Heels", 6, "Shoes");
         Players.add(newPlayer);
         newPlayer = new Player("Jeff", "1234");
         newPlayer.addItem("Satchel of Everything", 6, "Bag");
-        newPlayer.addItem("Gauntlets of the ", 1, "Gloves");
+        newPlayer.addItem("Gauntlets of Slapping", 1, "Gloves");
         newPlayer.addItem("Tattered Shirt of the Miser", 5, "Shirt");
         newPlayer.addItem("Sandals of Speed", 15, "Shoes");
         Players.add(newPlayer);
@@ -211,11 +211,11 @@ public class GameManager
             try
             {
                 qty = Integer.valueOf(tempInt);
-                if (player.getInventoryItem(choice).getQuantity()>qty)
+                if (qty>0)
                 {
                     player.updateInventoryQty(choice, qty);
                 }
-                else if (player.getInventoryItem(choice).getQuantity()<=qty)
+                else if (qty<=0)
                 {
                     remInv = player.removeItem(choice);
                     System.out.printf("You have dropped %d %s(s) from your inventory.", remInv.getQuantity(), remInv.getName());
@@ -243,10 +243,12 @@ public class GameManager
 
     public void showInventory(Player player, Scanner input)
     {
+        System.out.printf("\n\n%4s %28s - %-3s - %-10s\n", "Slot", "Item", "Qty", "Category");
+        System.out.printf("__________________________________________________\n");
         for(int i=0;i<player.getInventoryLength();i++)
         {
-            System.out.printf("%d. [%d] %s----%s\n", i+1, player.getInventoryItem(i).getQuantity(),
-                    player.getInventoryItem(i).getName(), player.getInventoryItem(i).getCategory() );
+            System.out.printf("%3d.%28s - [%-2d] - %-10s\n", i+1, player.getInventoryItem(i).getName(),
+                    player.getInventoryItem(i).getQuantity(), player.getInventoryItem(i).getCategory() );
         }
     }
 }

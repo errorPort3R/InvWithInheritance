@@ -5,9 +5,12 @@ package com.theironyard.javawithclojure.jhporter;
  */
 public class Shirt extends InventoryItem
 {
+
     public Shirt(String name, int qty)
     {
-        super(name, qty, "Shirt");
+        this.name = name;
+        this.quantity = qty;
+        this.category = "Shirt";
     }
 }
 

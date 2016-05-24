@@ -61,7 +61,7 @@ public class Main {
                     }
                     case "5":
                     {
-                        theGameManager.Save(FILE_LOC);
+                        //theGameManager.Save(FILE_LOC);
                         optionsRun = false;
                         player = null;
                         break;
@@ -76,21 +76,10 @@ public class Main {
             System.out.printf("\nLog in again?[y/n]");
             run = input.nextLine().toLowerCase().charAt(0);
         }
-
-
-
-
-
-
-
-
-
-
     }
 
     public static InventoryItem createItem(String name, int qty, String category)
     {
-
         switch (category.toLowerCase())
         {
             case "shirt":
