@@ -61,7 +61,7 @@ public class Main {
                     }
                     case "5":
                     {
-                        //theGameManager.Save(FILE_LOC);
+                        theGameManager.Save(FILE_LOC);
                         optionsRun = false;
                         player = null;
                         break;

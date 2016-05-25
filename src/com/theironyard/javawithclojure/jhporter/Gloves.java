@@ -11,4 +11,10 @@ public class Gloves extends InventoryItem
         this.quantity = qty;
         this.category = "Gloves";
     }
+
+    @Override
+    public String toString()
+    {
+        return category;
+    }
 }

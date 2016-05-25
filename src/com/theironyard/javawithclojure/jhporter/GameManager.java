@@ -1,6 +1,8 @@
 package com.theironyard.javawithclojure.jhporter;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -31,31 +33,32 @@ public class GameManager
     public void loadPlayers(String fileLoc)
     {
         Player newPlayer;
-        /*try
-        {
-            Scanner input = new Scanner(new File(fileLoc));
-            while (input.hasNext())
-            {
-                String line = input.nextLine();
-                String[] fields = line.split(",");
-                String userName = fields[0];
-                String password = fields[1];
-                newPlayer = new PlayerData(userName, password);
-                if(fields.length>2)
-                {
-                    for(int i = 2; i<(fields.length-1); i+=2)
-                    {
-                        int qty = Integer.valueOf(fields[i+1]);
-                        newPlayer.addItem(fields[i], qty);
-                    }
-                }
-                Players.add(newPlayer);
-            }
-        }
-        catch(Exception e)
-        {
-            System.err.printf("\nNot a Valid File!\n");
-        }*/
+
+//        try
+//        {
+//            Scanner input = new Scanner(new File(fileLoc));
+//            while (input.hasNext())
+//            {
+//                String line = input.nextLine();
+//                String[] fields = line.split(",");
+//                String userName = fields[0];
+//                String password = fields[1];
+//                newPlayer = new Player(userName, password);
+//                if(fields.length>2)
+//                {
+//                    for(int i = 2; i<(fields.length-1); i+=3)
+//                    {
+//                        int qty = Integer.valueOf(fields[i+1]);
+//                        newPlayer.addItem(fields[i], qty, fields[i+2]);
+//                    }
+//                }
+//                Players.add(newPlayer);
+//            }
+//        }
+//        catch(Exception e)
+//        {
+//            System.err.printf("\nNot a Valid File!\n");
+//        }
         newPlayer = new Player("James", "1234");
         newPlayer.addItem("T-shirt of Anti-Glistening", 6, "Shirt");
         newPlayer.addItem("High-Tops of Height Gains", 12, "Shoes");
@@ -88,13 +91,15 @@ public class GameManager
 
                 for (int j =0;j<Players.get(i).getInventoryLength();j++)
                 {
-                    if ((Players.get(i).getInventoryLength()-1) == i)
+                    if ((Players.get(i).getInventoryLength()-1) == j)
                     {
-                        output.printf("%s, %d\n", Players.get(i).getInventoryItem(j).getName(), Players.get(i).getInventoryItem(j).getQuantity());
+                        output.printf("%s, %d, %s\n", Players.get(i).getInventoryItem(j).getName(),
+                                Players.get(i).getInventoryItem(j).getQuantity(), Players.get(i).getInventoryItem(j).getCategory());
                     }
                     else
                     {
-                        output.printf("%s, %d, ", Players.get(i).getInventoryItem(j), Players.get(i).getInventoryItem(j).getQuantity());
+                        output.printf("%s, %d, %s", Players.get(i).getInventoryItem(j),
+                                Players.get(i).getInventoryItem(j).getQuantity(), Players.get(i).getInventoryItem(j).getCategory());
                     }
                 }
             }

@@ -12,4 +12,10 @@ public class Bag extends InventoryItem
         this.category = "Bag";
     }
 
+    @Override
+    public String toString()
+    {
+        return category;
+    }
+
 }

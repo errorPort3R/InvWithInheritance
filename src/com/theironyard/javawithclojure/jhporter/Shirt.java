@@ -12,5 +12,11 @@ public class Shirt extends InventoryItem
         this.quantity = qty;
         this.category = "Shirt";
     }
+
+    @Override
+    public String toString()
+    {
+        return category;
+    }
 }
 
